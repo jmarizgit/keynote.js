@@ -1,0 +1,72 @@
+<!--
+JSKeynote
+---------
+author: Mariz Melo (MM) 2011
+website: http//:www.emoriz.com
+license: http://creativecommons.org/licenses/by-sa/3.0/
+-->
+<html>
+<head>
+	<title>jskeynote</title>
+	<link rel="stylesheet" type="text/css" href="jskeynote.css" />
+	<style>		
+		/*OPTIONAL*/
+		
+		.jskeynote .titles{
+			text-align: center; 
+			margin-top: 330px;
+			font-size: 40px;	
+		}
+		.jskeynote .titles span{
+			border: 2px dotted #ececec; padding: 10px;
+		}
+		.jskeynote .titles .small{
+			font-size: 12px; color: #bbb;
+		}
+	</style>
+</head>
+<body>
+<!--
+	PLUGIN USES DL/DD INSTEAD OF UL/LI
+	----------------------------------
+	create as many DD's you want and 
+	place your HTML code inside of them
+	
+	you can also include AJAX code for 
+	external content inside of the DD's
+	
+	Enjoy...
+-->
+<div id="presentation" class="jskeynote">
+	<dl>
+		<dd>
+			<div class="titles">
+				<span class="rounded">SLIDE 1</span>
+				<br/><br/>
+				<span class="small rounded">
+					Use your <b>arrows keys</b> to navigate: <b>&larr; LEFT</b> | <b>RIGHT &rarr;</b>
+				</span>
+			</div>
+		</dd>
+		<dd>
+			<div class="titles">
+				<span class="rounded">SLIDE 2</span>
+			</div>
+		</dd>
+		<dd>
+			<div class="titles">
+				<span class="rounded">SLIDE 3</span>
+			</div>
+		</dd>
+	</dl>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+<script src="jquery.jskeynote.js"></script>
+<script>
+	$(function(){	
+		$("#presentation").jskeynote();	//HOW TO CALL PLUGIN
+	});//document.ready
+</script>
+</body>
+</html>

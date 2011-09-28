@@ -1,0 +1,77 @@
+/*!
+JSKeynote
+---------
+author: 	Mariz Melo (MM) 2011
+website: 	http//:www.emoriz.com
+download: 	https://github.com/jmarizgit/JSKeynote
+license: 	http://creativecommons.org/licenses/by-sa/3.0/
+*/
+html, body{
+	margin: 0;
+	padding: 0;
+}
+
+/*REQUIRED*/
+.jskeynote{
+	background: url("./bg.png") #424242;
+	position: absolute;
+	width: 1000px;
+	height: 700px;
+	font-family: Arial, Verdana;
+	overflow: hidden;
+}
+
+.jskeynote dl, .jskeynote dl dd{
+	margin: 0;
+	padding: 0;
+}
+
+.jskeynote dl{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -480px;
+	margin-top: -350px;
+	/*width: 2880px;*/
+	display: block;
+	/*background: green;*/
+}
+
+.jskeynote dl dd{
+	width: 960px;
+	height: 700px;
+	float: left;
+	margin-right: 80px;
+	background: #fff;
+	overflow: hidden;
+}
+
+.jskeynote .rounded{
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px; /* future proofing */
+	-khtml-border-radius: 10px; /* for old Konqueror browsers */
+}
+
+.jskeynote .shadow {
+ 	-moz-box-shadow: 5px 5px 5px #000;
+ 	-webkit-box-shadow: 5px 5px 5px #000;
+ 	box-shadow: 0px 0px 60px #000;
+}
+
+.jskeynote .opacity {
+  /* IE 8 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+
+  /* IE 5-7 */
+  filter: alpha(opacity=50);
+
+  /* Netscape */
+  -moz-opacity: 0.5;
+
+  /* Safari 1.x */
+  -khtml-opacity: 0.5;
+
+  /* Good browsers */
+  opacity: 0.5;
+}

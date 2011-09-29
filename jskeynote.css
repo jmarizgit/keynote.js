@@ -75,3 +75,10 @@ html, body{
   /* Good browsers */
   opacity: 0.5;
 }
+
+.jskeynote .jsk_tooltip{
+	color: white;	
+	position: absolute;
+	top:0; 
+	text-align: center; 
+}

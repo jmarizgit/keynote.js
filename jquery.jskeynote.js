@@ -12,6 +12,7 @@ license: 	http://creativecommons.org/licenses/by-sa/3.0/
 		
 		
 		var config = {
+			titles: true,
 			rounded: true,
 			shadow: true,
 			margin: 80,
@@ -20,6 +21,29 @@ license: 	http://creativecommons.org/licenses/by-sa/3.0/
 		}
  		
  		var $element = "#"+$(this).attr("id"); //cache id for the slide div wrapper
+ 		
+ 		
+ 		
+ 		var activeTitles = function(){
+ 			
+ 			$($element+" dd").each(function(){
+ 				var holdTitle = $(this).attr("title");
+				$(this).removeAttr("title");
+				$(this).append("<div class='jsk_tooltip' style='margin-top:"+(config.height+30)+";width:"+config.width+"px;'>"+holdTitle+"</div>");
+ 			});//each()
+ 			
+ 		}//activeTitles
+ 		
+ 		
+ 		//INSERT TITLE FOR SLIDES
+ 		if(config.titles)
+ 		{
+ 			activeTitles();
+ 			
+ 		}else{
+ 			$($element+" dd").attr("title");	//remove titles anyway	
+ 		}
+ 		
  		
  		var ddsize = $($element+" dd").size();
  		
@@ -56,9 +80,9 @@ license: 	http://creativecommons.org/licenses/by-sa/3.0/
  		
  		var checkKey = function(){
  			
- 			$(window).bind("keyup",function(){
-	 			
-	 			switch(event.keyCode)
+ 			$(window).bind("keyup",function(e){
+
+	 			switch(e.keyCode)
 				{
 					case 37:
 						//PREVIOUS KEY
@@ -80,7 +104,15 @@ license: 	http://creativecommons.org/licenses/by-sa/3.0/
 								checkKey();
 							});
 				  		}//if
-				 	break;			  
+				 	break;
+				 	
+				 	case 84:			  
+				 		//TITLES
+				 		if(config.titles && $($element+" .jsk_tooltip").is(":hidden"))
+				 			$($element+" .jsk_tooltip").show();
+				 		else
+				 			$($element+" .jsk_tooltip").hide();
+				 	break;
 				}//switch
  			});//window.bind()
  		}//checkKey()
